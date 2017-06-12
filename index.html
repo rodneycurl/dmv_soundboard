@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+     <head>
+         <title>Circles</title>
+        <link rel="stylesheet" href="grid.css" type="text/css" />
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.3/howler.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
+        <script
+          src="https://code.jquery.com/jquery-3.2.1.min.js"
+          integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+          crossorigin="anonymous">
+        </script>
+        <script type="text/javascript">
+          
+          	var keyData = {
+          	  a: {
+          	    color: "blue",
+          	    image: "glizzy",
+          	    sound: new Howl({
+                  src: ['dmv_sounds/glizzy-heffe.mp3']
+                })
+          	  },
+          	  s: {
+          	    color: "red",
+          	    image: "goldlink",
+          	    sound: new Howl({
+                  src: ['dmv_sounds/Goldlink-Freaky.mp3']
+                })
+          	  },
+          	  d: {
+          	    color: "green",
+          	    image: "wale",
+          	    sound: new Howl({
+                  src: ['dmv_sounds/wale-clip.mp3']
+                })
+          	  },
+          	  f: {
+          	    color: "white",
+          	    image: "logic",
+          	    sound: new Howl({
+                  src: ['dmv_sounds/logic.mp3']
+                })
+          	  },
+          	  h: {
+          	    color: "white",
+          	    image: "innanet",
+          	    sound: new Howl({
+                  src: ['dmv_sounds/innanetjames.mp3']
+                })
+          	  },
+          	  g: {
+          	    color: "white",
+          	    image: "greenspan",
+          	    sound: new Howl({
+                  src: ['dmv_sounds/greenspan.mp3']
+                })
+          	  }
+          	}
+          	
+          	var artistData = {
+          	  glizzy: {
+          	    color: "blue",
+          	    image: "glizzy",
+          	    sound: new Howl({
+                  src: ['dmv_sounds/glizzy-heffe.mp3']
+                })
+          	  },
+          	  goldlink: {
+          	    color: "red",
+          	    image: "goldlink",
+          	    sound: new Howl({
+                  src: ['dmv_sounds/Goldlink-Freaky.mp3']
+                })
+          	  },
+          	  wale: {
+          	    color: "green",
+          	    image: "wale",
+          	    sound: new Howl({
+                  src: ['dmv_sounds/wale-clip.mp3']
+                })
+          	  },
+          	  logic: {
+          	    color: "white",
+          	    image: "logic",
+          	    sound: new Howl({
+                  src: ['dmv_sounds/logic.mp3']
+                })
+          	  },
+          	  innanet: {
+          	    color: "white",
+          	    image: "innanet",
+          	    sound: new Howl({
+                  src: ['dmv_sounds/innanetjames.mp3']
+                })
+          	  },
+          	  greenspan: {
+          	    color: "white",
+          	    image: "greenspan",
+          	    sound: new Howl({
+                  src: ['dmv_sounds/greenspan.mp3']
+                })
+          	  }
+          	}
+            $(document).ready(function() {
+              document.onkeydown = function(e) {
+                if (keyData[event.key]){
+                    keyData[event.key].sound.play();
+                }
+                else console.log("key not mapped : code is", e.keyCode);
+            }
+            //  $('img').mouseenter(function(){
+            //     console.log("clicked"+this.id);
+            //     artistData[this.id].sound.play();
+            //     });
+            // });
+             $('img').click(function(){
+                console.log("clicked"+this.id);
+                artistData[this.id].sound.play();
+                });
+            });
+        </script>
+     </head>
+     <body>
+        <h1>DMV MUSIC SOUNDBOARD</h1>
+        <div id="images">
+            <img id="glizzy" src="dmv_rappers/glizzy2.png">
+            <img id="goldlink" src="dmv_rappers/goldlink2.png">
+            <img id="wale" src="dmv_rappers/wale2.png">
+            <img id="innanet" src="dmv_rappers/innanet2.png">
+            <img id="logic" src="dmv_rappers/logic2.png">
+            <img id="greenspan" src="dmv_rappers/greenspan2.png">
+        </div>
+      </body>
+</html>
